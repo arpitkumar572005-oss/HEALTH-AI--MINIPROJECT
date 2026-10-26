@@ -1,0 +1,200 @@
+{
+  "disease": "hypertension",
+  "version": "1.1.0",
+  "algorithm": "LogisticRegression",
+  "dataset_name": "hypertension_data.csv",
+  "total_records": 3500,
+  "train_records": 2800,
+  "test_records": 700,
+  "features": [
+    "systolic_bp",
+    "diastolic_bp",
+    "age",
+    "bmi",
+    "heart_rate",
+    "family_history",
+    "sodium_intake",
+    "smoking",
+    "physical_activity",
+    "symptoms_score"
+  ],
+  "feature_details": {
+    "systolic_bp": {
+      "mean": 139.63628571428572,
+      "std": 15.127844180128092,
+      "min": 88.0,
+      "max": 191.0,
+      "unit": "mmHg",
+      "label": "Systolic Blood Pressure",
+      "description": "Peak arterial systolic pressure"
+    },
+    "diastolic_bp": {
+      "mean": 74.71485714285714,
+      "std": 9.440619724351503,
+      "min": 50.0,
+      "max": 105.0,
+      "unit": "mmHg",
+      "label": "Diastolic Blood Pressure",
+      "description": "Resting diastolic arterial pressure"
+    },
+    "age": {
+      "mean": 46.61971428571429,
+      "std": 12.78441328825748,
+      "min": 18.0,
+      "max": 85.0,
+      "unit": "years",
+      "label": "Age",
+      "description": "Patient age in years"
+    },
+    "bmi": {
+      "mean": 26.922085714285714,
+      "std": 6.33425845483924,
+      "min": 16.0,
+      "max": 50.0,
+      "unit": "kg/m\u00b2",
+      "label": "Body Mass Index (BMI)",
+      "description": "Weight relative to height squared"
+    },
+    "heart_rate": {
+      "mean": 73.55628571428572,
+      "std": 9.796440781751533,
+      "min": 50.0,
+      "max": 111.0,
+      "unit": "bpm",
+      "label": "Resting Heart Rate",
+      "description": "Resting heart rate in beats per minute"
+    },
+    "family_history": {
+      "mean": 0.402,
+      "std": 0.49037200593141567,
+      "min": 0.0,
+      "max": 1.0,
+      "unit": "0=No, 1=Yes",
+      "label": "Family History of Hypertension",
+      "description": "Parental or sibling hypertension history"
+    },
+    "sodium_intake": {
+      "mean": 1.0317142857142858,
+      "std": 0.7410473024019281,
+      "min": 0.0,
+      "max": 2.0,
+      "unit": "0=Low, 1=Moderate, 2=High",
+      "label": "Dietary Sodium Intake",
+      "description": "Dietary salt and sodium intake level"
+    },
+    "smoking": {
+      "mean": 0.5914285714285714,
+      "std": 0.7798078439894948,
+      "min": 0.0,
+      "max": 2.0,
+      "unit": "0=Never, 1=Former, 2=Active",
+      "label": "Smoking Exposure",
+      "description": "Tobacco exposure level"
+    },
+    "physical_activity": {
+      "mean": 2.403828571428572,
+      "std": 2.4125605333912725,
+      "min": 0.0,
+      "max": 16.0,
+      "unit": "hours/week",
+      "label": "Weekly Physical Activity",
+      "description": "Weekly moderate aerobic exercise"
+    },
+    "symptoms_score": {
+      "mean": 1.0522857142857143,
+      "std": 0.9701800957559986,
+      "min": 0.0,
+      "max": 4.0,
+      "unit": "0-4 count",
+      "label": "Reported Hypertensive Symptoms",
+      "description": "Count of associated symptoms (headaches, dizziness, etc.)"
+    }
+  },
+  "feature_importances": {
+    "systolic_bp": 0.2483,
+    "diastolic_bp": 0.1527,
+    "age": 0.1386,
+    "bmi": 0.0708,
+    "heart_rate": 0.0115,
+    "family_history": 0.1089,
+    "sodium_intake": 0.0679,
+    "smoking": 0.0613,
+    "physical_activity": 0.0381,
+    "symptoms_score": 0.102
+  },
+  "model_coefficients": {
+    "systolic_bp": 0.7223,
+    "diastolic_bp": 0.4443,
+    "age": 0.4031,
+    "bmi": 0.2061,
+    "heart_rate": 0.0335,
+    "family_history": 0.3167,
+    "sodium_intake": 0.1974,
+    "smoking": 0.1784,
+    "physical_activity": -0.1108,
+    "symptoms_score": 0.2966
+  },
+  "model_intercept": -0.1609,
+  "risk_thresholds": {
+    "lower_max": 0.35,
+    "moderate_max": 0.65,
+    "categories": {
+      "lower": "<35% Lower Estimated Risk",
+      "moderate": "35\u201365% Moderate Estimated Risk",
+      "elevated": ">65% Elevated Estimated Risk"
+    }
+  },
+  "calibration_status": {
+    "is_post_hoc_calibrated": false,
+    "calibration_method": "none",
+    "score_type": "model_estimated_risk_score",
+    "description": "Probability estimates represent standard sigmoid outputs from L2-regularized balanced Logistic Regression. No post-hoc Platt scaling or Isotonic regression was executed; values are designated as Model Estimated Risk Scores rather than calibrated posterior probabilities."
+  },
+  "all_model_evaluations": {
+    "LogisticRegression": {
+      "accuracy": 0.7186,
+      "precision": 0.6329,
+      "recall_sensitivity": 0.7117,
+      "specificity": 0.7232,
+      "f1_score": 0.67,
+      "roc_auc": 0.7952,
+      "brier_score": 0.1868,
+      "confusion_matrix": {
+        "true_negatives": 303,
+        "false_positives": 116,
+        "false_negatives": 81,
+        "true_positives": 200
+      }
+    },
+    "RandomForest": {
+      "accuracy": 0.71,
+      "precision": 0.625,
+      "recall_sensitivity": 0.694,
+      "specificity": 0.7208,
+      "f1_score": 0.6577,
+      "roc_auc": 0.7805,
+      "brier_score": 0.1911,
+      "confusion_matrix": {
+        "true_negatives": 302,
+        "false_positives": 117,
+        "false_negatives": 86,
+        "true_positives": 195
+      }
+    },
+    "HistGradientBoosting": {
+      "accuracy": 0.73,
+      "precision": 0.6811,
+      "recall_sensitivity": 0.6157,
+      "specificity": 0.8067,
+      "f1_score": 0.6467,
+      "roc_auc": 0.7876,
+      "brier_score": 0.1861,
+      "confusion_matrix": {
+        "true_negatives": 338,
+        "false_positives": 81,
+        "false_negatives": 108,
+        "true_positives": 173
+      }
+    }
+  }
+}

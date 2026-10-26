@@ -1,0 +1,200 @@
+{
+  "disease": "cardiovascular",
+  "version": "1.1.0",
+  "algorithm": "LogisticRegression",
+  "dataset_name": "cardiovascular_data.csv",
+  "total_records": 3500,
+  "train_records": 2800,
+  "test_records": 700,
+  "features": [
+    "age",
+    "gender",
+    "systolic_bp",
+    "cholesterol",
+    "fasting_blood_sugar",
+    "heart_rate",
+    "smoking",
+    "chest_discomfort",
+    "bmi",
+    "physical_activity"
+  ],
+  "feature_details": {
+    "age": {
+      "mean": 51.13057142857143,
+      "std": 11.852037795333459,
+      "min": 20.0,
+      "max": 85.0,
+      "unit": "years",
+      "label": "Age",
+      "description": "Patient age in years"
+    },
+    "gender": {
+      "mean": 0.5188571428571429,
+      "std": 0.49971567468109895,
+      "min": 0.0,
+      "max": 1.0,
+      "unit": "0=F, 1=M",
+      "label": "Biological Sex",
+      "description": "Biological sex"
+    },
+    "systolic_bp": {
+      "mean": 124.95085714285715,
+      "std": 14.867842577392876,
+      "min": 90.0,
+      "max": 177.0,
+      "unit": "mmHg",
+      "label": "Systolic Blood Pressure",
+      "description": "Peak arterial systolic pressure"
+    },
+    "cholesterol": {
+      "mean": 221.29191428571428,
+      "std": 38.24573110491095,
+      "min": 130.0,
+      "max": 359.5,
+      "unit": "mg/dL",
+      "label": "Total Serum Cholesterol",
+      "description": "Circulating total serum cholesterol"
+    },
+    "fasting_blood_sugar": {
+      "mean": 0.2022857142857143,
+      "std": 0.40176152365288337,
+      "min": 0.0,
+      "max": 1.0,
+      "unit": "0=Normal, 1=>120 mg/dL",
+      "label": "Fasting Blood Sugar > 120",
+      "description": "Indicator of fasting hyperglycemia"
+    },
+    "heart_rate": {
+      "mean": 72.65828571428571,
+      "std": 10.835796815672925,
+      "min": 48.0,
+      "max": 114.0,
+      "unit": "bpm",
+      "label": "Resting Heart Rate",
+      "description": "Resting heart rate in beats per minute"
+    },
+    "smoking": {
+      "mean": 0.6525714285714286,
+      "std": 0.7985995990236224,
+      "min": 0.0,
+      "max": 2.0,
+      "unit": "0=Never, 1=Former, 2=Active",
+      "label": "Smoking Exposure",
+      "description": "Tobacco exposure level"
+    },
+    "chest_discomfort": {
+      "mean": 0.6317142857142857,
+      "std": 0.8971517781447085,
+      "min": 0.0,
+      "max": 3.0,
+      "unit": "0=None, 1=Mild, 2=Moderate, 3=Atypical",
+      "label": "Chest Discomfort Severity",
+      "description": "Exertional or resting chest sensation"
+    },
+    "bmi": {
+      "mean": 27.381942857142853,
+      "std": 6.459452504778956,
+      "min": 17.0,
+      "max": 48.0,
+      "unit": "kg/m\u00b2",
+      "label": "Body Mass Index (BMI)",
+      "description": "Weight relative to height squared"
+    },
+    "physical_activity": {
+      "mean": 2.232685714285714,
+      "std": 2.209236550771263,
+      "min": 0.0,
+      "max": 16.0,
+      "unit": "hours/week",
+      "label": "Weekly Physical Activity",
+      "description": "Weekly moderate aerobic activity"
+    }
+  },
+  "feature_importances": {
+    "age": 0.1785,
+    "gender": 0.0645,
+    "systolic_bp": 0.1145,
+    "cholesterol": 0.163,
+    "fasting_blood_sugar": 0.0699,
+    "heart_rate": 0.0287,
+    "smoking": 0.093,
+    "chest_discomfort": 0.1375,
+    "bmi": 0.0939,
+    "physical_activity": 0.0565
+  },
+  "model_coefficients": {
+    "age": 0.5199,
+    "gender": 0.1878,
+    "systolic_bp": 0.3336,
+    "cholesterol": 0.4747,
+    "fasting_blood_sugar": 0.2037,
+    "heart_rate": 0.0837,
+    "smoking": 0.2709,
+    "chest_discomfort": 0.4006,
+    "bmi": 0.2736,
+    "physical_activity": -0.1647
+  },
+  "model_intercept": -0.2122,
+  "risk_thresholds": {
+    "lower_max": 0.35,
+    "moderate_max": 0.65,
+    "categories": {
+      "lower": "<35% Lower Estimated Risk",
+      "moderate": "35–65% Moderate Estimated Risk",
+      "elevated": ">65% Elevated Estimated Risk"
+    }
+  },
+  "calibration_status": {
+    "is_post_hoc_calibrated": false,
+    "calibration_method": "none",
+    "score_type": "model_estimated_risk_score",
+    "description": "Probability estimates represent standard sigmoid outputs from L2-regularized balanced Logistic Regression. No post-hoc Platt scaling or Isotonic regression was executed; values are designated as Model Estimated Risk Scores rather than calibrated posterior probabilities."
+  },
+  "all_model_evaluations": {
+    "LogisticRegression": {
+      "accuracy": 0.6957,
+      "precision": 0.4907,
+      "recall_sensitivity": 0.7633,
+      "specificity": 0.6673,
+      "f1_score": 0.5974,
+      "roc_auc": 0.7936,
+      "brier_score": 0.1946,
+      "confusion_matrix": {
+        "true_negatives": 329,
+        "false_positives": 164,
+        "false_negatives": 49,
+        "true_positives": 158
+      }
+    },
+    "RandomForest": {
+      "accuracy": 0.6886,
+      "precision": 0.4816,
+      "recall_sensitivity": 0.6957,
+      "specificity": 0.6856,
+      "f1_score": 0.5692,
+      "roc_auc": 0.7721,
+      "brier_score": 0.2007,
+      "confusion_matrix": {
+        "true_negatives": 338,
+        "false_positives": 155,
+        "false_negatives": 63,
+        "true_positives": 144
+      }
+    },
+    "HistGradientBoosting": {
+      "accuracy": 0.7586,
+      "precision": 0.6439,
+      "recall_sensitivity": 0.4106,
+      "specificity": 0.9047,
+      "f1_score": 0.5015,
+      "roc_auc": 0.7776,
+      "brier_score": 0.1653,
+      "confusion_matrix": {
+        "true_negatives": 446,
+        "false_positives": 47,
+        "false_negatives": 122,
+        "true_positives": 85
+      }
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "disease": "diabetes",
+  "version": "1.1.0",
+  "algorithm": "LogisticRegression",
+  "dataset_name": "diabetes_data.csv",
+  "total_records": 3500,
+  "train_records": 2800,
+  "test_records": 700,
+  "features": [
+    "age",
+    "gender",
+    "bmi",
+    "fasting_glucose",
+    "systolic_bp",
+    "diastolic_bp",
+    "family_history",
+    "physical_activity",
+    "symptoms_score"
+  ],
+  "feature_details": {
+    "age": {
+      "mean": 47.90342857142857,
+      "std": 13.65409193594923,
+      "min": 18.0,
+      "max": 85.0,
+      "unit": "years",
+      "label": "Age",
+      "description": "Patient age in years"
+    },
+    "gender": {
+      "mean": 0.47314285714285714,
+      "std": 0.49934951358403556,
+      "min": 0.0,
+      "max": 1.0,
+      "unit": "0=F, 1=M",
+      "label": "Biological Sex",
+      "description": "Biological sex"
+    },
+    "bmi": {
+      "mean": 27.141200000000005,
+      "std": 6.178870386804578,
+      "min": 16.0,
+      "max": 52.0,
+      "unit": "kg/m\u00b2",
+      "label": "Body Mass Index (BMI)",
+      "description": "Weight relative to height squared"
+    },
+    "fasting_glucose": {
+      "mean": 95.88994285714286,
+      "std": 16.418828772625968,
+      "min": 70.0,
+      "max": 157.3,
+      "unit": "mg/dL",
+      "label": "Fasting Blood Glucose",
+      "description": "Plasma glucose after overnight fast"
+    },
+    "systolic_bp": {
+      "mean": 131.2102857142857,
+      "std": 13.136468285037536,
+      "min": 90.0,
+      "max": 176.0,
+      "unit": "mmHg",
+      "label": "Systolic Blood Pressure",
+      "description": "Peak arterial pressure during contraction"
+    },
+    "diastolic_bp": {
+      "mean": 71.972,
+      "std": 8.621925432924249,
+      "min": 55.0,
+      "max": 100.0,
+      "unit": "mmHg",
+      "label": "Diastolic Blood Pressure",
+      "description": "Resting arterial pressure between beats"
+    },
+    "family_history": {
+      "mean": 0.31857142857142856,
+      "std": 0.465988964571345,
+      "min": 0.0,
+      "max": 1.0,
+      "unit": "0=No, 1=Yes",
+      "label": "Family History of Diabetes",
+      "description": "First-degree relative diagnosed with diabetes"
+    },
+    "physical_activity": {
+      "mean": 2.4676285714285715,
+      "std": 2.45209386218926,
+      "min": 0.0,
+      "max": 18.0,
+      "unit": "hours/week",
+      "label": "Physical Activity",
+      "description": "Weekly moderate aerobic exercise"
+    },
+    "symptoms_score": {
+      "mean": 0.8165714285714286,
+      "std": 0.8897881899106681,
+      "min": 0.0,
+      "max": 4.0,
+      "unit": "count (0-5)",
+      "label": "Diabetes Symptoms Score",
+      "description": "Classic symptoms reported (polyuria, polydipsia, fatigue)"
+    }
+  },
+  "feature_importances": {
+    "age": 0.1764,
+    "gender": 0.006,
+    "bmi": 0.1748,
+    "fasting_glucose": 0.248,
+    "systolic_bp": 0.0707,
+    "diastolic_bp": 0.03,
+    "family_history": 0.1102,
+    "physical_activity": 0.0744,
+    "symptoms_score": 0.1096
+  },
+  "model_coefficients": {
+    "age": 0.4641,
+    "gender": 0.0157,
+    "bmi": 0.4599,
+    "fasting_glucose": 0.6527,
+    "systolic_bp": 0.1861,
+    "diastolic_bp": -0.0789,
+    "family_history": 0.2899,
+    "physical_activity": -0.1957,
+    "symptoms_score": 0.2883
+  },
+  "model_intercept": -0.5149,
+  "risk_thresholds": {
+    "lower_max": 0.35,
+    "moderate_max": 0.65
+  },
+  "all_model_evaluations": {
+    "LogisticRegression": {
+      "accuracy": 0.74,
+      "precision": 0.3708,
+      "recall_sensitivity": 0.7417,
+      "specificity": 0.7397,
+      "f1_score": 0.4944,
+      "roc_auc": 0.8061,
+      "brier_score": 0.176,
+      "confusion_matrix": {
+        "true_negatives": 429,
+        "false_positives": 151,
+        "false_negatives": 31,
+        "true_positives": 89
+      }
+    },
+    "RandomForest": {
+      "accuracy": 0.7514,
+      "precision": 0.3773,
+      "recall_sensitivity": 0.6917,
+      "specificity": 0.7638,
+      "f1_score": 0.4882,
+      "roc_auc": 0.7914,
+      "brier_score": 0.17,
+      "confusion_matrix": {
+        "true_negatives": 443,
+        "false_positives": 137,
+        "false_negatives": 37,
+        "true_positives": 83
+      }
+    },
+    "HistGradientBoosting": {
+      "accuracy": 0.8386,
+      "precision": 0.5814,
+      "recall_sensitivity": 0.2083,
+      "specificity": 0.969,
+      "f1_score": 0.3067,
+      "roc_auc": 0.7849,
+      "brier_score": 0.1175,
+      "confusion_matrix": {
+        "true_negatives": 562,
+        "false_positives": 18,
+        "false_negatives": 95,
+        "true_positives": 25
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0F766E;
+  --primary-dark: #115E59;
+  --primary-light: #F0FDFA;
+  --secondary: #142B3B;
+
+  --success: #0F766E;
+  --success-light: #F0FDFA;
+
+  --warning: #D97706;
+  --warning-light: #FFFBEB;
+
+  --danger: #DC2626;
+  --danger-light: #FEF2F2;
+
+  --background: #F7F9FA;
+  --surface: #FFFFFF;
+
+  --text-primary: #172B3A;
+  --text-secondary: #64748B;
+
+  --border: #E2E8F0;
+
+  --radius-card: 8px;
+  --radius-input: 6px;
+  --radius-btn: 6px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Restrained subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Modest corner radii and clinical buttons */
+button, input, select, textarea {
+  border-radius: 6px;
+}

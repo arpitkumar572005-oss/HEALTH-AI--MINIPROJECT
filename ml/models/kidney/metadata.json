@@ -1,0 +1,114 @@
+{
+  "disease": "kidney",
+  "title": "Chronic Kidney Disease Risk Screening",
+  "version": "1.0.0",
+  "algorithm": "Calibrated Logistic Regression (StandardScaler + L2)",
+  "features": [
+    "age",
+    "systolic_bp",
+    "serum_creatinine",
+    "blood_urea",
+    "albumin",
+    "fasting_glucose",
+    "hemoglobin",
+    "history_hypertension",
+    "history_diabetes",
+    "pedal_edema"
+  ],
+  "feature_details": {
+    "age": {
+      "label": "Age",
+      "unit": "years",
+      "mean": 53.7,
+      "std": 13.6,
+      "description": "Patient age in years."
+    },
+    "systolic_bp": {
+      "label": "Systolic Blood Pressure",
+      "unit": "mmHg",
+      "mean": 123.8,
+      "std": 15.2,
+      "description": "Resting systolic arterial pressure."
+    },
+    "serum_creatinine": {
+      "label": "Serum Creatinine",
+      "unit": "mg/dL",
+      "mean": 1.77,
+      "std": 0.51,
+      "description": "Primary biochemical marker of glomerular filtration rate."
+    },
+    "blood_urea": {
+      "label": "Blood Urea Nitrogen",
+      "unit": "mg/dL",
+      "mean": 44.3,
+      "std": 13.7,
+      "description": "Waste product filtered by functional renal nephrons."
+    },
+    "albumin": {
+      "label": "Urine Albumin (Proteinuria)",
+      "unit": "grade (0 to 4)",
+      "mean": 1.51,
+      "std": 1.16,
+      "description": "Presence of protein in urine indicating glomerular barrier permeability."
+    },
+    "fasting_glucose": {
+      "label": "Fasting Blood Glucose",
+      "unit": "mg/dL",
+      "mean": 104.1,
+      "std": 26.0,
+      "description": "Glycemic measurement relevant to diabetic nephropathy risk."
+    },
+    "hemoglobin": {
+      "label": "Hemoglobin",
+      "unit": "g/dL",
+      "mean": 13.9,
+      "std": 1.3,
+      "description": "Blood oxygen carrier; reduced in renal anemia."
+    },
+    "history_hypertension": {
+      "label": "Hypertension History",
+      "unit": "",
+      "mean": 0.35,
+      "std": 0.48,
+      "description": "Documented prior diagnosis of high blood pressure."
+    },
+    "history_diabetes": {
+      "label": "Diabetes History",
+      "unit": "",
+      "mean": 0.29,
+      "std": 0.45,
+      "description": "Documented prior diagnosis of diabetes mellitus."
+    },
+    "pedal_edema": {
+      "label": "Pedal Edema (Fluid Retention)",
+      "unit": "",
+      "mean": 0.23,
+      "std": 0.42,
+      "description": "Swelling in feet or ankles due to fluid retention."
+    }
+  },
+  "feature_importances": {
+    "age": 0.0673,
+    "systolic_bp": 0.108,
+    "serum_creatinine": 0.1974,
+    "blood_urea": 0.0787,
+    "albumin": 0.1898,
+    "fasting_glucose": 0.0009,
+    "hemoglobin": 0.0976,
+    "history_hypertension": 0.0727,
+    "history_diabetes": 0.08,
+    "pedal_edema": 0.1077
+  },
+  "dataset": {
+    "name": "HealthAI Chronic Kidney Disease Cohort Benchmark",
+    "total_samples": 3500,
+    "train_samples": 2800,
+    "test_samples": 700,
+    "prevalence_rate": 0.494
+  },
+  "limitations": [
+    "This model provides statistical screening risk estimates, not definitive diagnostic nephrology determinations.",
+    "Estimates should be confirmed through clinical laboratory panels (eGFR, comprehensive urinalysis) under physician supervision.",
+    "Transient fluctuations in hydration status or acute illness can temporarily alter creatinine and blood urea readings."
+  ]
+}
